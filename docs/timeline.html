@@ -47,6 +47,10 @@
             }
             return json;
         }
+
+        function substr(cadena){
+            return cadena.substring(0, 10) + ' ...'
+        }
     </script>
 
 
@@ -147,6 +151,9 @@
                 font-size: 12px;
             }
           }
+          .timeline-event-label {
+              font-size: 10px;
+          }
 
     </style>
 
@@ -170,12 +177,13 @@
             <div class="col-md-4" data-ex-role="facet" data-ex-expression=".playlistId" data-ex-facet-label="Playlists"
             data-ex-collapsible="true"></div>
         </div>
-        </div>
+        
 
-        <div data-ex-role="viewPanel" style="padding: 1em 0.5in;">
-
+        <div data-ex-role="viewPanel">
+            <!--
             <div data-ex-role="view" data-ex-view-class="Thumbnail" data-ex-showall="false" data-ex-orders=".label" data-ex-grouped="false"
-                data-ex-paginate="true" data-ex-page-size="30" data-ex-show-controls="false" data-ex-possible-orders=".publishedAt ">
+                data-ex-paginate="true" data-ex-page-size="30" data-ex-show-controls="false" data-ex-possible-orders=".publishedAt" 
+                >
 
                 <div data-ex-role="exhibit-lens" style="display: none;" class="video-thumbnail">
 
@@ -192,18 +200,29 @@
 
                 </div>
             </div>
-            <!--
+            -->
+            
             <div data-ex-role="view" 
                 data-ex-view-class="Timeline" 
-                data-ex-start=".publishedAt" >
+                data-ex-start=".publishedAt"
+                data-ex-bottom-band-unit="year"
+                data-ex-top-band-unit="day"
+                data-ex-icon-key=".playlistId"
+                data-ex-show-summary="false"
+                
+
+
+                >
                     <div data-ex-role="lens" class="video-timeline-lens" style="display: none;">
-                            <img data-ex-src-content=".imagen"  alt="portrait"/>
+                            <a target="_blank" data-ex-href-content="concat('https://www.youtube.com/watch?&v=', .url)">
+                            <img data-ex-src-content=".imagen"  alt="imagen"/>
+                            </a>
                             <div><span data-ex-content=".label"></span></div>
                             
                     </div>
 
             </div>
-            -->
+            
             
 
         </div>
@@ -212,7 +231,7 @@
 
 
 
-
+    </div>
     <!--  Scripts-->
 
 </body>
