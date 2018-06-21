@@ -124,6 +124,30 @@
             text-align: center;
         }
         
+        @media (max-width: 768px) {
+            h1, .h1 {
+                font-size: 24px
+            }
+            .video-thumbnail {
+                width: 90vw;
+                height: auto;
+                border: 1px solid #BCB79E;
+                background: #F0FFF0;
+                padding: 1em;
+                margin: 0.5em;
+                text-align: center;
+            }
+            .card-content {
+                font-size: 8px;
+            }
+            div.exhibit-facet-body{
+                height: 5em;
+            }
+            div.exhibit-facet-value {
+                font-size: 12px;
+            }
+          }
+
     </style>
 
 </head>
@@ -136,12 +160,15 @@
     
         <div data-ex-role="exhibit-collection" data-ex-item-types="video"></div>
         <div class="container">
-        <div class="row">
+        <button class="visible-xs"  data-toggle="collapse" data-target="#controles"> <span class="glyphicon glyphicon-sort"></span></button>
+
+        <div class="row collapse in" id="controles">
             <div class="col-md-4" data-ex-role="exhibit-facet" data-ex-facet-class="TextSearch" data-ex-facet-label="Buscar" 
             data-ex-expressions=".label, .playlistId.label"></div>
             <div class="col-md-4" data-ex-role="facet" data-ex-expression="yearOf(.publishedAt)" 
-            data-ex-facet-label="Año de publicación"></div>
-            <div class="col-md-4" data-ex-role="facet" data-ex-expression=".playlistId" data-ex-facet-label="Playlists"></div>
+            data-ex-collapsible="true" data-ex-facet-label="Año de publicación"></div>
+            <div class="col-md-4" data-ex-role="facet" data-ex-expression=".playlistId" data-ex-facet-label="Playlists"
+            data-ex-collapsible="true"></div>
         </div>
         </div>
 
