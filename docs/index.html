@@ -88,9 +88,9 @@
             color: #888;
         }
 
-        div.video-thumbnail {
+        ddiv.video-thumbnail {
             float: left;
-            width: 13em;
+            width: 12vw;
             height: 13em;
             border: 1px solid #BCB79E;
             background: #F0FFF0;
@@ -107,6 +107,23 @@
         .card-content p {
             font-size: 12px;
         }
+
+        .exhibit-thumbnailView-body{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: top;
+            justify-content: center;
+        }
+        .video-thumbnail {
+            width: 15vw;
+            height: auto;
+            border: 1px solid #BCB79E;
+            background: #F0FFF0;
+            padding: 1em;
+            margin: 0.5em;
+            text-align: center;
+        }
+        
     </style>
 
 </head>
@@ -116,14 +133,16 @@
     <h1 class="text-center">Vídeos David Bellas</h1>
     <hr>
 </header>
-    <div class="container">
+    
         <div data-ex-role="exhibit-collection" data-ex-item-types="video"></div>
+        <div class="container">
         <div class="row">
             <div class="col-md-4" data-ex-role="exhibit-facet" data-ex-facet-class="TextSearch" data-ex-facet-label="Buscar" 
             data-ex-expressions=".label, .playlistId.label"></div>
             <div class="col-md-4" data-ex-role="facet" data-ex-expression="yearOf(.publishedAt)" 
             data-ex-facet-label="Año de publicación"></div>
             <div class="col-md-4" data-ex-role="facet" data-ex-expression=".playlistId" data-ex-facet-label="Playlists"></div>
+        </div>
         </div>
 
         <div data-ex-role="viewPanel" style="padding: 1em 0.5in;">
@@ -159,7 +178,7 @@
             
 
         </div>
-    </div>
+    
 
 
 
